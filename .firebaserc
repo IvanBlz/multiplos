@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "multiplos-81bb8"
+  },
+  "targets": {
+    "multiplos-81bb8": {
+      "hosting": {
+        "enacment-multiplo": [
+          "multiplos-81bb8"
+        ]
+      }
+    }
+  }
+}

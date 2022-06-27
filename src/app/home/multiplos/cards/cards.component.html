@@ -1,0 +1,46 @@
+<!-- loading -->
+<div class="row text-center" *ngIf="loading; else LoadingSpiner">
+  <div class="col">
+    <div class="spinner-border text-danger mt-5" style="width: 10rem; height: 10rem" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</div>
+
+<!-- template deonde se mostraran los datos -->
+<ng-template #LoadingSpiner>
+  <div class="container-fluid">
+    <div class="row text-center">
+      <!-- boton para guardar el resultado -->
+      <div class="col">
+        <div *ngIf="multiploDto.length" class="m-3">
+          <button
+            type="button"
+            name="btnGuardar"
+            id="btnGuardar"
+            (click)="guardarResultado()"
+            class="text-white btn btn-success"
+          >
+            Guardar
+          </button>
+        </div>
+
+        <!-- mensaje de guardado -->
+        <div *ngIf="save" class="alert alert-success" role="alert">Resultado guardado!</div>
+      </div>
+    </div>
+    <div class="row row-cols-4 text-center">
+      <!-- recorremos el arreglo creado con los resultados de los multiplos encontrados entre 1 y el parametro proporcionado -->
+      <div *ngFor="let item of multiploDto; let i = index" class="col">
+        <div class=" card text-white bg-{{ item.color }} m-3">
+          <div class="card-header">
+            {{ item.value }}
+          </div>
+          <div *ngIf="item.multiplos" class="card-body">
+            <p>{{ item.multiplos }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

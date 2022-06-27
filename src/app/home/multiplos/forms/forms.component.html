@@ -1,0 +1,26 @@
+<!-- Formulario para enviar el parametro proporcionado porel usuario para encontrar los multiplos de 3, 5 y 7 -->
+<div class="container">
+  <form (submit)="encontrarMultiplo(multiplo)">
+    <div class="row">
+      <div class="col-7">
+        <div class="mb-3 mt-3">
+          <input
+            type="number"
+            [(ngModel)]="multiplo"
+            class="form-control"
+            name="multiplo"
+            id="multiplo"
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <small id="helpId" class="form-text text-muted">Ingresa el número limite</small>
+        </div>
+      </div>
+      <div class="col">
+        <div class="m-3">
+          <button type="submit" name="btnSubmit" id="btnSubmit" class="float-start btn btn-primary">Encontrar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
